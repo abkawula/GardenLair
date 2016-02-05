@@ -312,32 +312,32 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
         builder.setTitle(title)
                 .setItems(items, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        switch (kComponentsNameIds[which]) {
-                            case R.string.scan_connectservice_info: {          // Info
-                                mComponentToStartWhenConnected = InfoActivity.class;
-                                break;
-                            }
-                            case R.string.scan_connectservice_uart: {           // Uart
-                                mComponentToStartWhenConnected = UartActivity.class;
-                                break;
-                            }
-                            case R.string.scan_connectservice_pinio: {        // PinIO
-                                mComponentToStartWhenConnected = PinIOActivity.class;
-                                break;
-                            }
-                            case R.string.scan_connectservice_controller: {     // Controller
+//                        switch (kComponentsNameIds[which]) {
+//                            case R.string.scan_connectservice_info: {          // Info
+//                                mComponentToStartWhenConnected = InfoActivity.class;
+//                                break;
+//                            }
+//                            case R.string.scan_connectservice_uart: {           // Uart
+//                                mComponentToStartWhenConnected = UartActivity.class;
+//                                break;
+//                            }
+//                            case R.string.scan_connectservice_pinio: {        // PinIO
+//                                mComponentToStartWhenConnected = PinIOActivity.class;
+//                                break;
+//                            }
+//                            case R.string.scan_connectservice_controller: {     // Controller
                                 mComponentToStartWhenConnected = ControllerActivity.class;
-                                break;
-                            }
-                            case R.string.scan_connectservice_beacon: {         // Beacon
-                                mComponentToStartWhenConnected = BeaconActivity.class;
-                                break;
-                            }
-                        }
+//                                break;
+//                            }
+//                            case R.string.scan_connectservice_beacon: {         // Beacon
+//                                mComponentToStartWhenConnected = BeaconActivity.class;
+//                                break;
+//                            }
+//                        }
 
-                        if (mComponentToStartWhenConnected != null) {
+//                        if (mComponentToStartWhenConnected != null) {
                             connect(device);            // First connect to the device, and when connected go to selected activity
-                        }
+//                        }
                     }
                 });
 
