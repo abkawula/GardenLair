@@ -303,15 +303,15 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
 
     private void showChooseDeviceServiceDialog(final BluetoothDevice device) {
         // Prepare dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        String deviceName = device.getName();
-        String title = String.format(getString(R.string.scan_connectto_dialog_title_format), deviceName != null ? deviceName : device.getAddress());
-        String[] items = new String[kComponentsNameIds.length];
-        for (int i = 0; i < kComponentsNameIds.length; i++) items[i] = getString(kComponentsNameIds[i]);
-
-        builder.setTitle(title)
-                .setItems(items, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        String deviceName = device.getName();
+//        String title = String.format(getString(R.string.scan_connectto_dialog_title_format), deviceName != null ? deviceName : device.getAddress());
+//        String[] items = new String[kComponentsNameIds.length];
+//        for (int i = 0; i < kComponentsNameIds.length; i++) items[i] = getString(kComponentsNameIds[i]);
+//
+//        builder.setTitle(title)
+//                .setItems(items, new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
 //                        switch (kComponentsNameIds[which]) {
 //                            case R.string.scan_connectservice_info: {          // Info
 //                                mComponentToStartWhenConnected = InfoActivity.class;
@@ -338,12 +338,12 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
 //                        if (mComponentToStartWhenConnected != null) {
                             connect(device);            // First connect to the device, and when connected go to selected activity
 //                        }
-                    }
-                });
+//                    }
+//                });
 
         // Show dialog
-        AlertDialog dialog = builder.create();
-        dialog.show();
+//        AlertDialog dialog = builder.create();
+//        dialog.show();
     }
 
     private boolean manageBluetoothAvailability() {
