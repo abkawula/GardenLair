@@ -326,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
 //                                break;
 //                            }
 //                            case R.string.scan_connectservice_controller: {     // Controller
-                                mComponentToStartWhenConnected = ControllerActivity.class;
+                                mComponentToStartWhenConnected = PadActivity.class;
 //                                break;
 //                            }
 //                            case R.string.scan_connectservice_beacon: {         // Beacon
