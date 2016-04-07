@@ -31,23 +31,36 @@ public class PadActivity extends UartInterfaceActivity implements BleManager.Ble
         mBleManager = BleManager.getInstance(this);
 
         // UI
-        ImageButton upArrowImageButton = (ImageButton) findViewById(R.id.upArrowImageButton);
-        upArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton leftArrowImageButton = (ImageButton) findViewById(R.id.leftArrowImageButton);
-        leftArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton rightArrowImageButton = (ImageButton) findViewById(R.id.rightArrowImageButton);
-        rightArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton bottomArrowImageButton = (ImageButton) findViewById(R.id.bottomArrowImageButton);
-        bottomArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
+//        ImageButton upArrowImageButton = (ImageButton) findViewById(R.id.upArrowImageButton);
+//        upArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
+//        ImageButton leftArrowImageButton = (ImageButton) findViewById(R.id.leftArrowImageButton);
+//        leftArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
+//        ImageButton rightArrowImageButton = (ImageButton) findViewById(R.id.rightArrowImageButton);
+//        rightArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
+//        ImageButton bottomArrowImageButton = (ImageButton) findViewById(R.id.bottomArrowImageButton);
+//        bottomArrowImageButton.setOnTouchListener(mPadButtonTouchListener);
+//
+//        ImageButton button1ImageButton = (ImageButton) findViewById(R.id.button1ImageButton);
+//        button1ImageButton.setOnTouchListener(mPadButtonTouchListener);
+//        ImageButton button2ImageButton = (ImageButton) findViewById(R.id.button2ImageButton);
+//        button2ImageButton.setOnTouchListener(mPadButtonTouchListener);
+//        ImageButton button3ImageButton = (ImageButton) findViewById(R.id.button3ImageButton);
+//        button3ImageButton.setOnTouchListener(mPadButtonTouchListener);
+//        ImageButton button4ImageButton = (ImageButton) findViewById(R.id.button4ImageButton);
+//        button4ImageButton.setOnTouchListener(mPadButtonTouchListener);
 
-        ImageButton button1ImageButton = (ImageButton) findViewById(R.id.button1ImageButton);
-        button1ImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton button2ImageButton = (ImageButton) findViewById(R.id.button2ImageButton);
-        button2ImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton button3ImageButton = (ImageButton) findViewById(R.id.button3ImageButton);
-        button3ImageButton.setOnTouchListener(mPadButtonTouchListener);
-        ImageButton button4ImageButton = (ImageButton) findViewById(R.id.button4ImageButton);
-        button4ImageButton.setOnTouchListener(mPadButtonTouchListener);
+        ImageButton[] buttons = new ImageButton[] {
+                (ImageButton) findViewById(R.id.buttonFrontStep),
+                (ImageButton) findViewById(R.id.buttonCabinFrt),
+                (ImageButton) findViewById(R.id.buttonCabinRr),
+                (ImageButton) findViewById(R.id.buttonReadingL),
+                (ImageButton) findViewById(R.id.buttonReadingR),
+                (ImageButton) findViewById(R.id.buttonRotateL),
+                (ImageButton) findViewById(R.id.buttonRotateR)
+        };
+        for (ImageButton button : buttons) {
+            button.setOnTouchListener(mPadButtonTouchListener);
+        }
 
         // Start services
         onServicesDiscovered();
@@ -59,18 +72,18 @@ public class PadActivity extends UartInterfaceActivity implements BleManager.Ble
         int mainWidth = rootLayout.getWidth();
 
         if (mainWidth > 0) {
-            View topSpacerView = findViewById(R.id.topSpacerView);
-            View bottomSpacerView = findViewById(R.id.bottomSpacerView);
-            int mainHeight = rootLayout.getHeight() - topSpacerView.getLayoutParams().height - bottomSpacerView.getLayoutParams().height;
-            if (mainHeight > 0) {
-                // Add black bars if aspect ratio is below min
-                float aspectRatio = mainWidth / (float) mainHeight;
-                if (aspectRatio < kMinAspectRatio) {
-                    final int spacerHeight = Math.round(mainHeight * (kMinAspectRatio - aspectRatio));
-                    topSpacerView.getLayoutParams().height = spacerHeight / 2;
-                    bottomSpacerView.getLayoutParams().height = spacerHeight / 2;
-                }
-            }
+//            View topSpacerView = findViewById(R.id.topSpacerView);
+//            View bottomSpacerView = findViewById(R.id.bottomSpacerView);
+//            int mainHeight = rootLayout.getHeight() - topSpacerView.getLayoutParams().height - bottomSpacerView.getLayoutParams().height;
+//            if (mainHeight > 0) {
+//                // Add black bars if aspect ratio is below min
+//                float aspectRatio = mainWidth / (float) mainHeight;
+//                if (aspectRatio < kMinAspectRatio) {
+//                    final int spacerHeight = Math.round(mainHeight * (kMinAspectRatio - aspectRatio));
+//                    topSpacerView.getLayoutParams().height = spacerHeight / 2;
+//                    bottomSpacerView.getLayoutParams().height = spacerHeight / 2;
+//                }
+//            }
         }
     }
 
